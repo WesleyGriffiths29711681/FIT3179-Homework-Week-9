@@ -1,0 +1,14 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 500,
+    "data": {
+        "url": "./data/traffic_totals.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {"field": "name", "type": "nominal", "axis": {"labelAngle": 0}},
+      "y": {"field": "count", "type": "quantitative"}
+    }
+}
+  

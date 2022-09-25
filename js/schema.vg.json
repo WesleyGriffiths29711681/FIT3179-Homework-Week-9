@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 400,
+    "data": {
+      "url": "./data/melbourne_roads_topo.json",
+      "format": {
+        "type": "topojson",
+        "feature": "melbourne_roads1"
+      }
+    },
+    "transform": [{
+      "lookup": "name",
+      "from": {
+        "data": {
+          "url": "./data/traffic_totals.json"
+        },
+        "key": "name",
+        "fields": ["count"]
+      }
+    }],
+    "projection": {
+      "type": "mercator"
+    },
+    "mark": "geoshape",
+    "encoding": {
+      "color": {
+        "field": "count",
+        "type": "quantitative"
+      }
+    }
+  }
+  

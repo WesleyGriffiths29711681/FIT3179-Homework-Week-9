@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 720,
+    "height": 900,
+    "title": "Traffic Volume in the City of Melbourne (2015-2021)",
+    "layer": [
+        {
+            "projection": {
+                "type": "mercator"
+            },
+            "data": {
+                "url": "./data/melbourne_roads_traffic_topo.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "melbourne_roads_large"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "stroke": "black",
+                "strokeWidth": 0.1
+            },
+            "encoding": {
+                "color": {
+                    "field": "properties.trafficCount",
+                    "type": "quantitative",
+                    "legend": {
+                        "title": "Vehicle Quantity",
+                        "orient": "bottom-left",
+                        "gradientLength": 200,
+                        "direction": "vertical",
+                        "titleAlign": "left"
+                    }
+                }
+            }
+        },
+        {
+            "projection": {
+                "type": "mercator"
+            },
+            "data": {
+                "url": "./data/melbourne_roads_no_data_topo.json",
+                "format": {
+                    "type": "topojson",
+                    "feature": "melbourne_roads_large"
+                }
+            },
+            "mark": {
+                "type": "geoshape",
+                "stroke": "black",
+                "strokeWidth": 0.1,
+                "fill": "lightgray"
+            }
+        }
+    ]
+
+}
+  

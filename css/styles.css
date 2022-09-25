@@ -1,0 +1,9 @@
+#traffic_map {
+    /* Placeholder for now */
+}
+
+#wide {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
